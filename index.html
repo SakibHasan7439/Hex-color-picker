@@ -6,6 +6,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Hex Color Generator</title>
 </head>
+    <style>
+        @keyframes animation-in {
+            from {
+                transform: translateX(200px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        .animation-in {
+            animation: animation-in 0.5s ease-in;
+        }   
+
+        @keyframes animation-out {
+            from {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(200px);
+                opacity: 0;
+            }
+        }
+
+        .animation-out {
+            animation: animation-out 0.5s ease-in;
+        }   
+    </style>
 <body>
     <div class="h-svh bg-black flex flex-col justify-center items-center gap-6" id="root">
         <h1 class="text-5xl font-extralight text-white">Generate Hexadecimal Color by Clicking the following button</h1>
