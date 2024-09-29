@@ -9,7 +9,10 @@
 <body>
     <div class="h-svh bg-black flex flex-col justify-center items-center gap-6" id="root">
         <h1 class="text-5xl font-extralight text-white">Generate Hexadecimal Color by Clicking the following button</h1>
-        <input disabled value="#000000" class="px-4 py-2 bg-white rounded-md" type="text" name="hexCode" id="hexCode">
+        <div class="flex items-center gap-2">
+            <input disabled value="#000000" class="px-4 py-3 bg-white rounded-md" type="text" name="hexCode" id="hexCode">
+            <button id="copy" class="px-4 py-3 active:bg-gray-400 bg-white rounded-md">Copy</button>
+        </div>
         <button id="change-color" class="border-2 active:bg-white active:text-black border-white rounded-md px-6 py-3 w-[250px] uppercase text-xl text-white">Change color</button>
     </div>
     <script src="script.js"></script>
