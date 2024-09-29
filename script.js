@@ -14,7 +14,6 @@ btn.addEventListener("click", function(){
     root.style.backgroundColor = bgColor;
 
     hexCode.value = bgColor;
-    copyBtn.addEventListener("click", function(){div.style.backgroundColor = bgColor})
     
     if(copyBtn.innerText === "Copied"){
         copyBtn.innerText = "Copy";
@@ -39,7 +38,13 @@ function copyText(){
         div.remove();
         div = null;
     }
-    generateToastMessage(`${hexCode.value} copied`);
+
+    if(isValidHex(hexCode.value)){
+        generateToastMessage(`${hexCode.value} copied`);
+    }else {
+        alert("invalid colorCode");
+    }
+    
 }
 
 // toast message
