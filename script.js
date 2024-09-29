@@ -2,7 +2,7 @@ let div = null;
 const root = getElementById("root");
 const btn = getElementById("change-color");
 const hexCode = getElementById("hexCode");
-const copyBtn = document.getElementById("copy");
+const copyBtn = getElementById("copy");
 
 
 function getElementById(id){
@@ -59,3 +59,20 @@ function generateToastMessage(msg){
 
     document.body.appendChild(div);
 }
+
+// is isValidHex
+function isValidHex(color){
+    if((!color.startswith === "#") && (color.length !== 7)){
+        return false;
+    }
+
+    color = color.substring(1);
+    return /^[0-9A-Fa-f]{6}$/i.test(color);
+}
+
+hexCode.addEventListener("keyup", (event)=>{
+    const color = event.target.value;
+    if(color && isValidHex(color)){
+        root.style.backgroundColor = color;
+    }
+})
